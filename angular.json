@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "css"
         }
       },
       "root": "",
@@ -28,9 +28,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              },
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              },
+              {
+                "input": "./node_modules/jquery/dist/jquery.min.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +103,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -124,6 +134,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "ccsd-challenge"
+    }
+  },
+  "defaultProject": "ccsd-challenge",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css"
+    }
+  }
 }
